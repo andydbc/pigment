@@ -1,0 +1,29 @@
+{
+  "name": "convert-color",
+  "version": "0.0.1",
+  "description": "A CLI tool to convert colors between different formats (HEX, RGB, HSL, etc.)",
+  "type": "module",
+  "bin": "bin/convert-color.js",
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsup ./src/index.ts --watch",
+    "build": "tsc --noemit && tsup ./src/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Andy Duboc",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.0.8",
+    "@types/yargs": "^17.0.35",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@texel/color": "^1.1.11",
+    "yargs": "17.7.2"
+  }
+}
