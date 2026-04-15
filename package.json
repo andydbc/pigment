@@ -1,5 +1,5 @@
 {
-  "name": "@andbc/color-convert",
+  "name": "@andbc/pigment",
   "version": "0.0.1",
   "description": "A CLI tool to convert colors between different formats (HEX, RGB, HSL, etc.)",
   "type": "module",
