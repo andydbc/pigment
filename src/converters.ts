@@ -46,6 +46,20 @@ function sRGBToHSL(r: number, g: number, b: number): [number, number, number] {
   return [h, s, l];
 }
 
+// ─── detectFormat ────────────────────────────────────────────────────────────
+
+export function detectFormat(color: string): Format {
+  const s = color.trim().toLowerCase();
+  if (s.startsWith('#')) return 'hex';
+  if (s.startsWith('rgba(') || s.startsWith('rgb(')) return 'rgb';
+  if (s.startsWith('hsla(') || s.startsWith('hsl(')) return 'hsl';
+  if (s.startsWith('vec3(') || s.startsWith('vec4(')) return 'glsl';
+  if (s.startsWith('oklch(')) return 'oklch';
+  if (s.startsWith('oklab(')) return 'oklab';
+  if (s.startsWith('color(display-p3')) return 'p3';
+  throw new Error(`Cannot detect format for: ${color}`);
+}
+
 // ─── parse ───────────────────────────────────────────────────────────────────
 
 export function parse(color: string, from: Format): Parsed {

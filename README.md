@@ -1,6 +1,6 @@
 # pigment
 
-CLI tool to convert colors between formats. Powered by [`@texel/color`](https://github.com/texel-org/color).
+CLI tool to convert colors between formats.
 
 ## Install
 
@@ -61,7 +61,7 @@ pigment --from oklch --to p3 --color "oklch(65% 0.196 41)"
 | Flag      | Alias | Description              |
 |-----------|-------|--------------------------|
 | `--color` | `-c`  | Input color value        |
-| `--from`  | `-f`  | Input format (required)  |
+| `--from`  | `-f`  | Input format (auto-detected if omitted) |
 | `--to`    | `-t`  | Output format (required) |
 | `--help`  | `-h`  | Show help                |
 
@@ -72,3 +72,7 @@ yarn build
 ```
 
 Outputs to `dist/index.js`.
+
+## Acknowledgements
+
+Color space conversions by [`@texel/color`](https://github.com/texel-org/color).
