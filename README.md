@@ -11,7 +11,7 @@ npm install -g @andbc/pigment
 ## Usage
 
 ```bash
-pigment --from <format> --to <format> --color <value>
+pigment <color> --to <format> [--from <format>]
 ```
 
 ## Supported Formats
@@ -31,39 +31,38 @@ pigment --from <format> --to <format> --color <value>
 ## Examples
 
 ```bash
-# Hex to RGB
-pigment --from hex --to rgb --color "#ff6600"
+# Hex to RGB (format auto-detected)
+pigment "#ff6600" --to rgb
 # rgb(255, 102, 0)
 
-# Hex to OKLCH
-pigment --from hex --to oklch --color "#ff6600"
-# oklch(69.58% 0.2043 43.49)
+# Hex to OKLCH (format auto-detected)
+pigment "#ff6600" --to oklch
+# oklch(0.6958 0.2043 43.49)
 
-# Hex to GLSL vec3
-pigment --from hex --to glsl --color "#ff6600"
-# vec3(1.000, 0.400, 0.000)
-
-# 8-digit hex to GLSL vec4 (with alpha)
-pigment --from hex --to glsl --color "#ff660080"
+# 8-digit hex to GLSL vec4 (with alpha, format auto-detected)
+pigment "#ff660080" --to glsl
 # vec4(1.000, 0.400, 0.000, 0.502)
 
-# RGB to HSL
-pigment --from rgb --to hsl --color "rgb(255, 102, 0)"
+# RGB to HSL (explicit --from)
+pigment "rgb(255, 102, 0)" --from rgb --to hsl
 # hsl(24, 100%, 50%)
 
-# OKLCH to Display P3
-pigment --from oklch --to p3 --color "oklch(65% 0.196 41)"
+# OKLCH to Display P3 (explicit --from)
+pigment "oklch(0.65 0.196 41)" --from oklch --to p3
 # color(display-p3 0.8588 0.3860 0.1713)
+
+# GLSL to hex (explicit --from)
+pigment "vec3(1.0, 0.4, 0.0)" --from glsl --to hex
+# #ff6600
 ```
 
 ## Flags
 
-| Flag      | Alias | Description              |
-|-----------|-------|--------------------------|
-| `--color` | `-c`  | Input color value        |
-| `--from`  | `-f`  | Input format (auto-detected if omitted) |
-| `--to`    | `-t`  | Output format (required) |
-| `--help`  | `-h`  | Show help                |
+| Flag     | Alias | Description                             |
+|----------|-------|-----------------------------------------|
+| `--from` | `-f`  | Input format (auto-detected if omitted) |
+| `--to`   | `-t`  | Output format (required)                |
+| `--help` | `-h`  | Show help                               |
 
 ## Build
 

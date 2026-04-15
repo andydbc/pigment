@@ -250,20 +250,20 @@ export function serialize(values: number[], to: Format, hasAlpha: boolean): stri
 
     case 'oklch': {
       // @texel/color OKLCH: [L, C, H] where L is 0–1
-      const L = (c0 * 100).toFixed(2);
+      const L = c0.toFixed(4);
       const C = c1.toFixed(4);
       const H = c2.toFixed(2);
-      if (hasAlpha && c3 !== undefined) return `oklch(${L}% ${C} ${H} / ${c3.toFixed(3)})`;
-      return `oklch(${L}% ${C} ${H})`;
+      if (hasAlpha && c3 !== undefined) return `oklch(${L} ${C} ${H} / ${c3.toFixed(3)})`;
+      return `oklch(${L} ${C} ${H})`;
     }
 
     case 'oklab': {
       // @texel/color OKLab: [L, a, b] where L is 0–1
-      const L = (c0 * 100).toFixed(2);
+      const L = c0.toFixed(4);
       const a = c1.toFixed(4);
       const b = c2.toFixed(4);
-      if (hasAlpha && c3 !== undefined) return `oklab(${L}% ${a} ${b} / ${c3.toFixed(3)})`;
-      return `oklab(${L}% ${a} ${b})`;
+      if (hasAlpha && c3 !== undefined) return `oklab(${L} ${a} ${b} / ${c3.toFixed(3)})`;
+      return `oklab(${L} ${a} ${b})`;
     }
 
     case 'p3': {

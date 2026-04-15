@@ -2,11 +2,10 @@ import yargs from 'yargs';
 import { FORMATS, Format, parse, convertToSpace, serialize, detectFormat } from './converters.js';
 
 const argv = await yargs(process.argv.slice(2))
-  .option('color', {
-    alias: 'c',
+  .usage('$0 <color> [options]')
+  .positional('color', {
     type: 'string',
     description: 'Input color value',
-    demandOption: true,
   })
   .option('from', {
     alias: 'f',
@@ -25,9 +24,15 @@ const argv = await yargs(process.argv.slice(2))
   .alias('help', 'h')
   .parseAsync();
 
+const color = argv._[0] as string | undefined;
+if (!color) {
+  console.error('Missing required argument: color');
+  process.exit(1);
+}
+
 try {
-  const from = (argv.from as Format) ?? detectFormat(argv.color);
-  const { values, hasAlpha } = parse(argv.color, from);
+  const from = (argv.from as Format) ?? detectFormat(color);
+  const { values, hasAlpha } = parse(color, from);
   const converted = convertToSpace(values, argv.to as Format);
   const output = serialize(converted, argv.to as Format, hasAlpha);
   console.log(output);

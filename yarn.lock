@@ -5,6 +5,21 @@ __metadata:
   version: 8
   cacheKey: 10
 
+"@andbc/pigment@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@andbc/pigment@workspace:."
+  dependencies:
+    "@texel/color": "npm:^1.1.11"
+    "@types/node": "npm:^25.0.8"
+    "@types/yargs": "npm:^17.0.35"
+    tsup: "npm:^8.5.1"
+    typescript: "npm:^5.9.3"
+    yargs: "npm:17.7.2"
+  bin:
+    pigment: bin/convert-color.js
+  languageName: unknown
+  linkType: soft
+
 "@esbuild/aix-ppc64@npm:0.27.2":
   version: 0.27.2
   resolution: "@esbuild/aix-ppc64@npm:0.27.2"
@@ -628,21 +643,6 @@ __metadata:
   checksum: 10/32192c9f50d7cac27c5d7c4ecd3ff3679aea863e6bf5bd6a9cc2b05d1cd78addf5dae71df08c54330c142be8e7fbd46f051030129b57c6aacdd771efe409c4b2
   languageName: node
   linkType: hard
-
-"convert-color@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "convert-color@workspace:."
-  dependencies:
-    "@texel/color": "npm:^1.1.11"
-    "@types/node": "npm:^25.0.8"
-    "@types/yargs": "npm:^17.0.35"
-    tsup: "npm:^8.5.1"
-    typescript: "npm:^5.9.3"
-    yargs: "npm:17.7.2"
-  bin:
-    convert-color: bin/convert-color.js
-  languageName: unknown
-  linkType: soft
 
 "debug@npm:4, debug@npm:^4.3.4, debug@npm:^4.4.0":
   version: 4.4.3
