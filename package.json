@@ -1,9 +1,14 @@
 {
   "name": "@andbc/pigment",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "A CLI tool to convert colors between different formats (HEX, RGB, HSL, etc.)",
   "type": "module",
-  "bin": "bin/convert-color.js",
+  "bin": {
+    "pigment": "dist/index.js"
+  },
   "files": [
     "dist",
     "bin"
@@ -25,5 +30,9 @@
   "dependencies": {
     "@texel/color": "^1.1.11",
     "yargs": "17.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andydbc/pigment.git"
   }
 }
