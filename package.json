@@ -6,17 +6,14 @@
   },
   "description": "A CLI tool to convert colors between different formats (HEX, RGB, HSL, etc.)",
   "type": "module",
-  "bin": {
-    "pigment": "dist/index.js"
-  },
+  "bin": "dist/index.js",
   "files": [
-    "dist",
-    "bin"
+    "dist"
   ],
   "main": "index.js",
   "scripts": {
-    "watch": "tsup ./src/index.ts --format esm --watch",
     "build": "tsc --noemit && tsup ./src/index.ts --format esm",
+    "dev": "tsup --watch",
     "prepublishOnly": "npm run build"
   },
   "author": "Andy Duboc",
