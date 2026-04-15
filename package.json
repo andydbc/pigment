@@ -14,7 +14,7 @@
   "scripts": {
     "build": "tsc --noemit && tsup ./src/index.ts --format esm",
     "dev": "tsup --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "yarn build"
   },
   "author": "Andy Duboc",
   "license": "MIT",
