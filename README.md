@@ -72,6 +72,10 @@ yarn build
 
 Outputs to `dist/index.js`.
 
-## Acknowledgements
+## Credits
 
 Color space conversions by [`@texel/color`](https://github.com/texel-org/color).
+
+## License
+
+MIT, see [LICENSE](https://github.com/andydbc/pigment/blob/main/LICENSE) for details.
