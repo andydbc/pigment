@@ -1,5 +1,7 @@
 # pigment
 
+![banner](./media/banner.png)
+
 CLI tool to convert colors between formats.
 
 ## Install
